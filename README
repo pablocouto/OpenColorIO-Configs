@@ -1,3 +1,11 @@
+This repository contains a simplified version of the ACES 1.2
+configuration, with the addition of the Sharp RGB color space. Here,
+Sharp RGB takes the roles of `default`, `rendering`, and `scene_linear`.
+
+I make no guarantees about the correctness of this configuration.
+
+--- Original readme: ---
+
 This repository contains all the default color configurations, for use with
 OpenColorIO.
 
