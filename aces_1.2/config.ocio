@@ -61,7 +61,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScc color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScc_to_ACES
     isdata: false
     allocation: uniform
@@ -77,7 +77,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScct color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScct_to_ACES
     isdata: false
     allocation: uniform
@@ -93,7 +93,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScg color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScg_to_ACES
     isdata: false
     allocation: lg2
@@ -106,7 +106,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       ACES 1.0 Output - Rec. 709 Output Transform
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.Rec709_100nits_dim.a1.0.3
     isdata: false
     allocation: uniform
@@ -126,7 +126,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       ACES 1.0 Output - sRGB Output Transform
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.RGBmonitor_100nits_dim.a1.0.3
     isdata: false
     allocation: uniform
@@ -286,7 +286,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACES Look Transform: Blue Light Artifact Fix
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:LMT.Academy.BlueLightArtifactFix.a1.1.0
     isdata: false
     allocation: lg2
@@ -321,7 +321,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScc color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScc_to_ACES
     isdata: false
     allocation: uniform
@@ -334,7 +334,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScct color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScct_to_ACES
     isdata: false
     allocation: uniform
@@ -347,7 +347,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACEScg color space
-      
+
       ACES Transform ID : ACEScsc.Academy.ACEScg_to_ACES
     isdata: false
     allocation: lg2
@@ -360,7 +360,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       ACES 1.0 Output - Rec. 709 Output Transform
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.Rec709_100nits_dim.a1.0.3
     isdata: false
     allocation: uniform
@@ -374,7 +374,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       ACES 1.0 Output - sRGB Output Transform
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.RGBmonitor_100nits_dim.a1.0.3
     isdata: false
     allocation: uniform
@@ -507,7 +507,7 @@ colorspaces:
     bitdepth: 32f
     description: |
       The ACES Look Transform: Blue Light Artifact Fix
-      
+
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:LMT.Academy.BlueLightArtifactFix.a1.1.0
     isdata: false
     allocation: lg2
