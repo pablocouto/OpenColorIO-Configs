@@ -103,8 +103,6 @@ colorspaces:
 
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.Rec709_100nits_dim.a1.0.3
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<GroupTransform>
       children:
         - !<FileTransform> {src: InvRRT.Rec.709.Log2_48_nits_Shaper.spi3d, interpolation: tetrahedral}
@@ -123,8 +121,6 @@ colorspaces:
 
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.RGBmonitor_100nits_dim.a1.0.3
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<GroupTransform>
       children:
         - !<FileTransform> {src: InvRRT.sRGB.Log2_48_nits_Shaper.spi3d, interpolation: tetrahedral}
@@ -142,8 +138,6 @@ colorspaces:
     description: |
       The Curve - Rec.1886 color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<FileTransform> {src: linear_to_rec1886.spi1d, interpolation: linear, direction: inverse}
 
   - !<ColorSpace>
@@ -154,8 +148,6 @@ colorspaces:
     description: |
       The Curve - Rec. 709 color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<FileTransform> {src: linear_to_rec709.spi1d, interpolation: linear, direction: inverse}
 
   - !<ColorSpace>
@@ -166,8 +158,6 @@ colorspaces:
     description: |
       The Curve - sRGB color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<FileTransform> {src: linear_to_sRGB.spi1d, interpolation: linear, direction: inverse}
 
   - !<ColorSpace>
@@ -217,8 +207,6 @@ colorspaces:
     description: |
       The BT. 1886 - Texture color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     from_reference: !<GroupTransform>
       children:
         - !<MatrixTransform> {matrix: [0.952552, 0, 9.36786e-05, 0, 0.343966, 0.728166, -0.0721325, 0, 0, 0, 1.00883, 0, 0, 0, 0, 1]}
@@ -233,8 +221,6 @@ colorspaces:
     description: |
       The sRGB - Texture color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     from_reference: !<GroupTransform>
       children:
         - !<MatrixTransform> {matrix: [0.952552, 0, 9.36786e-05, 0, 0.343966, 0.728166, -0.0721325, 0, 0, 0, 1.00883, 0, 0, 0, 0, 1]}
@@ -249,8 +235,6 @@ colorspaces:
     description: |
       The Gamma 2.2 - Rec. 709 color space for importing certain textures.
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     from_reference: !<GroupTransform>
       children:
         - !<MatrixTransform> {matrix: [0.952552, 0, 9.36786e-05, 0, 0.343966, 0.728166, -0.0721325, 0, 0, 0, 1.00883, 0, 0, 0, 0, 1]}
@@ -265,8 +249,6 @@ colorspaces:
     description: |
       The Raw color space
     isdata: true
-    allocation: uniform
-    allocationvars: [0, 1]
 
   - !<ColorSpace>
     name: Utility - Look - Blue Light Artifact Fix
@@ -345,8 +327,6 @@ colorspaces:
 
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.Rec709_100nits_dim.a1.0.3
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<ColorSpaceTransform> {src: Output - Rec. 709, dst: ACES - ACES2065-1}
     from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Output - Rec. 709}
 
@@ -359,8 +339,6 @@ colorspaces:
 
       ACES Transform ID : urn:ampas:aces:transformId:v1.5:ODT.Academy.RGBmonitor_100nits_dim.a1.0.3
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<ColorSpaceTransform> {src: Output - sRGB, dst: ACES - ACES2065-1}
     from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Output - sRGB}
 
@@ -372,9 +350,7 @@ colorspaces:
     description: |
       The Curve - Rec.1886 color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
-    to_reference: !<ColorSpaceTransform> {src: Utility - Curve - Rec.1886, dst: ACES - ACES2065-1}
+    to_reference: !<ColorSpaceTransform> {src: Utility - Curve - BT.1886, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
     name: crv_rec709
@@ -384,8 +360,6 @@ colorspaces:
     description: |
       The Curve - Rec. 709 color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<ColorSpaceTransform> {src: Utility - Curve - Rec. 709, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
@@ -396,8 +370,6 @@ colorspaces:
     description: |
       The Curve - sRGB color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     to_reference: !<ColorSpaceTransform> {src: Utility - Curve - sRGB, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
@@ -438,9 +410,7 @@ colorspaces:
     description: |
       The BT. 1886 - Texture color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
-    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - BT. 1886 - Texture}
+    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - BT.1886 - Texture}
 
   - !<ColorSpace>
     name: srgb_texture
@@ -450,8 +420,6 @@ colorspaces:
     description: |
       The sRGB - Texture color space
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - sRGB - Texture}
 
   - !<ColorSpace>
@@ -462,8 +430,6 @@ colorspaces:
     description: |
       The Gamma 2.2 - Rec.709 color space for importing certain textures.
     isdata: false
-    allocation: uniform
-    allocationvars: [0, 1]
     from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Gamma 2.2 - Rec. 709 - Texture}
 
   - !<ColorSpace>
@@ -474,8 +440,6 @@ colorspaces:
     description: |
       The Raw color space
     isdata: true
-    allocation: uniform
-    allocationvars: [0, 1]
 
   - !<ColorSpace>
     name: look_bluelightartifactfix
