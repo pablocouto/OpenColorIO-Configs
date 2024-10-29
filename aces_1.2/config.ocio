@@ -27,10 +27,12 @@ displays:
     - !<View> {name: sRGB, colorspace: Output - sRGB}
     - !<View> {name: Rec. 709, colorspace: Output - Rec. 709}
     - !<View> {name: Raw, colorspace: Utility - Raw}
+    - !<View> {name: PBR Neutral - BT.1886, colorspace: Output - PBR Neutral - BT.1886}
+    - !<View> {name: PBR Neutral - sRGB, colorspace: Output - PBR Neutral - sRGB}
 
 
 active_displays: [ACES]
-active_views: [Rec. 709, sRGB, Raw]
+active_views: [PBR Neutral - BT.1886, PBR Neutral - sRGB, Rec. 709, sRGB, Raw]
 
 
 colorspaces:
@@ -97,24 +99,44 @@ colorspaces:
         - !<FileTransform> {src: Log2_48_nits_Shaper.RRT.sRGB.spi3d, interpolation: tetrahedral}
 
   - !<ColorSpace>
-    name: Utility - Curve - Rec.1886
-    family: Utility
-    equalitygroup: Curve - Rec.1886
+    name: Output - PBR Neutral - BT.1886
+    family: PBR Neutral
+    equalitygroup:
     bitdepth: 32f
     description: |
-      The Curve - Rec.1886 color space
+      Khronos PBR Neutral Image Encoding for BT.1886 Display variant
     isdata: false
-    to_reference: !<FileTransform> {src: linear_to_rec1886.spi1d, interpolation: linear, direction: inverse}
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Linear - Rec. 709}
+        - !<AllocationTransform> {allocation: lg2, vars: [-9, 10]}
+        - !<FileTransform> {src: pbrNeutral.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Curve - BT.1886}
 
   - !<ColorSpace>
-    name: Utility - Curve - Rec. 709
-    family: Utility
-    equalitygroup: Curve - Rec. 709
+    name: Output - PBR Neutral - sRGB
+    family: PBR Neutral
+    equalitygroup:
     bitdepth: 32f
     description: |
-      The Curve - Rec. 709 color space
+      Khronos PBR Neutral Image Encoding for sRGB Display variant
     isdata: false
-    to_reference: !<FileTransform> {src: linear_to_rec709.spi1d, interpolation: linear, direction: inverse}
+    from_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Linear - Rec. 709}
+        - !<AllocationTransform> {allocation: lg2, vars: [-9, 10]}
+        - !<FileTransform> {src: pbrNeutral.cube, interpolation: tetrahedral}
+        - !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Curve - sRGB}
+
+  - !<ColorSpace>
+    name: Utility - Curve - BT.1886
+    family: Utility
+    equalitygroup: Curve - BT.1886
+    bitdepth: 32f
+    description: |
+      The Curve - BT.1886 color space
+    isdata: false
+    to_reference: !<FileTransform> {src: linear_to_rec1886.spi1d, interpolation: linear, direction: inverse}
 
   - !<ColorSpace>
     name: Utility - Curve - sRGB
@@ -264,14 +286,24 @@ colorspaces:
     from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Output - sRGB}
 
   - !<ColorSpace>
-    name: crv_rec1886
-    family: Utility/Aliases
-    equalitygroup: Curve - Rec.1886
+    name: out_pbrneutral_bt1886
+    family: PBR Neutral
+    equalitygroup:
     bitdepth: 32f
     description: |
-      The Curve - Rec.1886 color space
+      Khronos PBR Neutral Image Encoding for BT.1886 Display variant
     isdata: false
-    to_reference: !<ColorSpaceTransform> {src: Utility - Curve - BT.1886, dst: ACES - ACES2065-1}
+    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Output - PBR Neutral - BT.1886}
+
+  - !<ColorSpace>
+    name: out_pbrneutral_srgb
+    family: PBR Neutral
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      Khronos PBR Neutral Image Encoding for sRGB Display variant
+    isdata: false
+    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Output - PBR Neutral - sRGB}
 
   - !<ColorSpace>
     name: crv_rec1886
