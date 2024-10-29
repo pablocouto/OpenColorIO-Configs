@@ -218,7 +218,7 @@ colorspaces:
     family: Utility/Aliases
     bitdepth: 32f
     isdata: false
-    to_reference: !<FileTransform> {src: SharpRGB_to_AP0_CAT16.spimtx}
+    to_reference: !<ColorSpaceTransform> {src: Sharp RGB, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
     name: aces
@@ -274,14 +274,14 @@ colorspaces:
     to_reference: !<ColorSpaceTransform> {src: Utility - Curve - BT.1886, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
-    name: crv_rec709
+    name: crv_rec1886
     family: Utility/Aliases
-    equalitygroup: Curve - Rec. 709
+    equalitygroup: Curve - BT.1886
     bitdepth: 32f
     description: |
-      The Curve - Rec. 709 color space
+      The Curve - BT.1886 color space
     isdata: false
-    to_reference: !<ColorSpaceTransform> {src: Utility - Curve - Rec. 709, dst: ACES - ACES2065-1}
+    to_reference: !<ColorSpaceTransform> {src: Utility - Curve - BT.1886, dst: ACES - ACES2065-1}
 
   - !<ColorSpace>
     name: crv_srgb
@@ -321,7 +321,7 @@ colorspaces:
     description: |
       The Linear - sRGB color space
     isdata: false
-    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Linear - Rec. 709}
+    from_reference: !<ColorSpaceTransform> {src: ACES - ACES2065-1, dst: Utility - Linear - sRGB}
 
   - !<ColorSpace>
     name: bt1886_texture
