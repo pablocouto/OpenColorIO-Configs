@@ -4,7 +4,9 @@ search_path: luts:transforms
 strictparsing: true
 luma: [0.2126, 0.7152, 0.0722]
 
-description: Modified ACES config for rendering in Sharp RGB color space
+description: |
+  Modified ACES config with support for the Sharp RGB color space and the
+  Khronos PBR Neutral tone mapper
 
 
 roles:
