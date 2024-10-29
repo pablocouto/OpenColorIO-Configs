@@ -11,14 +11,12 @@ roles:
   color_picking: Output - Rec. 709
   compositing_linear: ACES - ACEScg
   data: Utility - Raw
-  default: Sharp RGB
-  # default: ACES - ACES2065-1
+  default: ACES - ACEScg
   matte_paint: Utility - sRGB - Texture
   reference: ACES - ACES2065-1
   rendering: Sharp RGB
   # rendering: ACES - ACEScg
-  scene_linear: Sharp RGB
-  # scene_linear: ACES - ACEScg
+  scene_linear: ACES - ACEScg
   texture_paint: Utility - sRGB - Texture
 
 
